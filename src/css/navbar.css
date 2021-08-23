@@ -1,0 +1,68 @@
+li {
+  margin-right: 15px;
+  border-radius: 5px !important;
+}
+
+ul.left {
+  margin-left: 10px;
+}
+
+.drawSelector {
+  background-color: rgba(34, 113, 119, 0.596);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+
+.drawSelector div {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+input[type="radio"] + i {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.material-icons.md-40 {
+  font-size: 40px;
+}
+
+input[class="wall"]:hover + i,
+input[class="wall"]:checked + i,
+input[class="wall"]:focus + i {
+  color: rgb(114, 109, 184) !important;
+  font-size: 50px !important;
+}
+
+input[class="empty"]:hover + i,
+input[class="empty"]:checked + i,
+input[class="empty"]:focus + i {
+  color: rgb(215, 217, 235) !important;
+  font-size: 50px !important;
+}
+
+input[class="start"]:hover + i,
+input[class="start"]:checked + i,
+input[class="start"]:focus + i {
+  color: rgb(0, 223, 231) !important;
+  font-size: 50px !important;
+}
+
+input[class="end"]:hover + i,
+input[class="end"]:checked + i,
+input[class="end"]:focus + i {
+  color: rgb(238, 255, 0) !important;
+  font-size: 50px !important;
+}
+
+span {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: 600;
+}

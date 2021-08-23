@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../static/background.png");
+  background-size: cover;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.row {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+.grid-container {
+  display: grid;
+  box-shadow:
+    0 0 0 4px hsl(0, 0%, 0%),
+    0 0 0 10px hsla(0, 1%, 31%, 0.349);
+  background-color: rgba(0, 0, 0, 0.411);
+  background-image: url("../static/gradient2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.grid-item {
+  border: 1px dotted rgba(10, 101, 117, 0.8);
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.empty {
+  background-color: rgb(141, 180, 155);
+}
+
+.wall {
+  background-color: rgb(23, 22, 44);
+  border: none;
+  z-index: 3;
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 16px 16px;
+}
+
+.start {
+  background-color: rgb(6, 205, 255);
+  border: 2px solid black;
+  transform: scale(1.2);
+  z-index: 4;
+
+  box-shadow:
+    0 0 5px 1px #fff,
+    0 0 15px 8px rgb(0, 173, 241);
+}
+
+.end {
+  background-color: rgb(255, 251, 0);
+  border: 2px solid black;
+  transform: scale(1.2);
+  z-index: 4;
+  box-shadow:
+    0 0 5px 2px #fff,
+    0 0 15px 6px rgb(237, 241, 0);
+}
+
+.path {
+  animation-name: shortestPath;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  z-index: 1;
+}
+
+.visited {
+  animation-name: visitedAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+div {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(59, 59, 211, 0.75);
+    border-radius: 25%;
+  }
+
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(196, 211, 64, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(23, 219, 98, 0.63);
+  }
+}
+
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: rgb(106, 176, 255);
+    border-radius: 50%;
+  }
+
+  50% {
+    transform: scale(1);
+    background-color: rgb(255, 254, 106, 0.8);
+    border-radius: 25%;
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(153, 79, 236, 0.6);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(255, 30, 0, 0.6);
+    box-shadow:
+      0 0 5px 2px #fff,
+      0 0 15px 10px rgb(255, 208, 0);
+  }
+}
